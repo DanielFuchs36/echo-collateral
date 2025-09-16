@@ -1,16 +1,17 @@
 import { Radio, Zap, Shield, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="relative py-20 px-6">
         <div className="container mx-auto text-center">
           <div className="flex justify-center mb-8">
             <div className="vault-panel p-6 rounded-2xl">
-              <Radio className="h-16 w-16 text-accent animate-pulse-glow" />
+              <Radio className="h-16 w-16 text-primary animate-pulse-glow" />
             </div>
           </div>
           
@@ -22,7 +23,7 @@ const Index = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" variant="neon">
+            <Button asChild size="lg" variant="default">
               <Link to="/collateralize">Start Collateralizing</Link>
             </Button>
             <Button asChild size="lg" variant="outline">
@@ -35,40 +36,52 @@ const Index = () => {
       {/* Features Section */}
       <section className="py-20 px-6 bg-muted/30">
         <div className="container mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-foreground">
             Why Choose Echo Collateral?
           </h2>
           
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center p-6">
-              <div className="vault-panel p-4 rounded-xl w-fit mx-auto mb-4">
-                <Zap className="h-8 w-8 text-accent" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Lightning Fast</h3>
-              <p className="text-muted-foreground">
-                Sub-second liquidation execution with automated threshold monitoring
-              </p>
-            </div>
+            <Card className="text-center">
+              <CardHeader>
+                <div className="vault-panel p-4 rounded-xl w-fit mx-auto mb-4">
+                  <Zap className="h-8 w-8 text-primary" />
+                </div>
+                <CardTitle>Lightning Fast</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription>
+                  Sub-second liquidation execution with automated threshold monitoring
+                </CardDescription>
+              </CardContent>
+            </Card>
             
-            <div className="text-center p-6">
-              <div className="vault-panel p-4 rounded-xl w-fit mx-auto mb-4">
-                <Shield className="h-8 w-8 text-accent" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Privacy First</h3>
-              <p className="text-muted-foreground">
-                Fully Homomorphic Encryption keeps your NFT values private
-              </p>
-            </div>
+            <Card className="text-center">
+              <CardHeader>
+                <div className="vault-panel p-4 rounded-xl w-fit mx-auto mb-4">
+                  <Shield className="h-8 w-8 text-primary" />
+                </div>
+                <CardTitle>Privacy First</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription>
+                  Fully Homomorphic Encryption keeps your NFT values private
+                </CardDescription>
+              </CardContent>
+            </Card>
             
-            <div className="text-center p-6">
-              <div className="vault-panel p-4 rounded-xl w-fit mx-auto mb-4">
-                <Globe className="h-8 w-8 text-accent" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Multi-Chain</h3>
-              <p className="text-muted-foreground">
-                Cross-chain compatibility with Ethereum, Polygon, and more
-              </p>
-            </div>
+            <Card className="text-center">
+              <CardHeader>
+                <div className="vault-panel p-4 rounded-xl w-fit mx-auto mb-4">
+                  <Globe className="h-8 w-8 text-primary" />
+                </div>
+                <CardTitle>Multi-Chain</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription>
+                  Cross-chain compatibility with Ethereum, Polygon, and more
+                </CardDescription>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>

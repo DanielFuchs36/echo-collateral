@@ -60,7 +60,7 @@
 
 @layer components {
   .vault-panel {
-    @apply bg-gradient-to-br from-primary/10 to-accent/10 border border-accent/20;
+    @apply bg-gradient-to-br from-primary/10 to-accent/10 border border-accent/20 backdrop-blur-sm;
   }
   
   .animate-pulse-glow {
@@ -74,5 +74,25 @@
     to {
       filter: drop-shadow(0 0 20px hsl(var(--accent)));
     }
+  }
+
+  .container {
+    @apply mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 px-4 py-2 rounded-md font-medium transition-colors;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground hover:bg-secondary/80 px-4 py-2 rounded-md font-medium transition-colors;
+  }
+
+  .card {
+    @apply bg-card text-card-foreground border border-border rounded-lg shadow-sm;
+  }
+
+  .input {
+    @apply flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50;
   }
 }
